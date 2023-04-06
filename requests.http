@@ -1,0 +1,42 @@
+POST /v1/api/wallet
+Host: localhost:8081
+Content-Type: application/json
+
+{
+  "program": "{{program}}",
+  "userId": "{{userId}}",
+  "earned": 500,
+  "spent": 0,
+  "transactionId": "test_d8454cb881f20",
+  "expiryDate": "2024-01-21T00:12:04"
+}
+
+###
+POST /v1/api/consume
+Host: localhost:8081
+Content-Type: application/json
+
+{
+  "program": "{{program}}",
+  "userId": "{{userId}}",
+  "amount": 400,
+  "transactionId": "test_444e704adea5"
+}
+
+###
+POST /v1/api/program
+Host: localhost:8081
+Content-Type: application/json
+
+{
+  "name": "{{program}}",
+  "walletType": "B2B"
+}
+
+###
+GET /v1/api/users/{{userId}}/wallets
+Host: localhost:8081
+
+###
+GET /v1/api/users/{{userId}}/wallets-summaries
+Host: localhost:8081
